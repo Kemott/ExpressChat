@@ -2,8 +2,8 @@ version: "3.7"
 services:
   backend:
     build:
-      dockerfile: /backend/Dockerfile
-      context: .
+      dockerfile: Dockerfile
+      context: ./backend
     volumes:
       - "/backend:/backend"
     ports:
@@ -18,8 +18,8 @@ services:
     command: mongod --port 27018
   frontend:
     build:
-      dockerfile: /frontend/Dockerfile
-      context: .
+      dockerfile: Dockerfile
+      context: ./frontend
     volumes:
       - "/frontend:/frontend"
     ports:
