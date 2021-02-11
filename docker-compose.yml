@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile.backend
+      context: .
+    volumes:
+      - "/backend:/backend"
+    ports:
+      - "6820:6820"
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:3.5
+    ports:
+      - "27018:27018"
+    command: mongod --port 27018
+  frontend:
+    build:
+      dockerfile: Dockerfile.frontend
+      context: .
+    volumes:
+      - "/frontend:/frontend"
+    ports:
+      - "80:4200"
