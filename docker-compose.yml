@@ -7,7 +7,8 @@ services:
     volumes:
       - "/backend:/backend"
     ports:
-      - "6820:6820"
+      - "3000:3000"
+    command: npm start
     depends_on:
       - mongodb
   mongodb:
@@ -23,3 +24,4 @@ services:
       - "/frontend:/frontend"
     ports:
       - "80:4200"
+    command: npm start
