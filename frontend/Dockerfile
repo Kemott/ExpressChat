@@ -12,7 +12,7 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE 3000
+EXPOSE 4200
 
 FROM nginx:1.17.1-alpine
 
